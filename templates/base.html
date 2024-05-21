@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--<a class="navbar-brand" href="#">Continental Parking</a>-->
+        <img src="{{ url_for('static', filename='uploads/' + 'continental-logo-gold-on-black.png') }}" class="img-thumbnail" style="max-width: 300px; max-height: 250px;"><br/>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}"><b>Home</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}" class="btn btn-success"><b>Login</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('signup') }}" class="btn btn-primary"><b>Sign Up</b></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+                <img src="{{ url_for('static', filename='uploads/' + 'csm_image_20flags_1e71369c5c.jpg') }}" class="img-thumbnail">
+
+                <center><h1 class="display-4 p-3 mb-4 bg-warning text-dark"><b>Welcome to Continental Parking Scenarios collection Campaign for India</b></h1>
+                <p class="lead"><b>This is a simple web application for users to upload parking images.</p></b></center>
+    <!-- Main Content -->
+    <div class="display-4 p-3 mb-4">
+        {% block content %}{% endblock %}
+        <img src="{{ url_for('static', filename='uploads/' + 'continental_parking.jpg') }}" class="img-thumbnail" style='height: 100%; width: 100%; object-fit: contain'/>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <p class="text-center">&copy; 2024 Continental Parking Campaign. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
